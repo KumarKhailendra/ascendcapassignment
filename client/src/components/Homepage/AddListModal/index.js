@@ -39,11 +39,11 @@ export default function AddListModal({ open, handleClose, setAllLists, user }) {
 
   const submitHandler = () => {
     const createList = async() => {
-      await axios.post(`/api/list/create`, {listName : newListName,
+      await axios.post(`https://ascendcapassignment.onrender.com/api/list/create`, {listName : newListName,
         author: user?.id,
         tasks: newTaskList});
 
-      const data = await axios.get(`/api/list/All?id=${user?.id}`);
+      const data = await axios.get(`https://ascendcapassignment.onrender.com/api/list/All?id=${user?.id}`);
       setAllLists(data.data.lists);
       handleClose();
     }

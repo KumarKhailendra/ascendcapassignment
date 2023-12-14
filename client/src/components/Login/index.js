@@ -17,7 +17,7 @@ function Login({setUser}) {
   const [password, setSPassword] = useState("");
 
   const handleLogin = async() => {
-    const user = await axios.post(`/api/user/login`, {email, password});
+    const user = await axios.post(`https://ascendcapassignment.onrender.com/api/user/login`, {email, password});
     const auth = user?.data?.data
     window.sessionStorage.setItem("user", JSON.stringify(auth));
     setUser(auth)

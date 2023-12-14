@@ -21,7 +21,7 @@ function Register({setUser}) {
   const navigate = useNavigate();
 
   const handleUser = async () => {
-    const user = await axios.post(`/api/user/register`, {
+    const user = await axios.post(`https://ascendcapassignment.onrender.com/api/user/register`, {
       firstName, 
       lastName, 
       email, 

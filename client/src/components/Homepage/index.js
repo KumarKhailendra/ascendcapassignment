@@ -10,7 +10,7 @@ function Homepage({user}) {
 
   useEffect(()=>{
     const getData = async() => {
-      const data = await axios.get(`/api/list/All?id=${user?.id}`);
+      const data = await axios.get(`https://ascendcapassignment.onrender.com/api/list/All?id=${user?.id}`);
       setAllLists(data.data.lists);
     }
     getData();

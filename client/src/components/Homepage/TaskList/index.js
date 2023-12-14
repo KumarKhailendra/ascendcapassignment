@@ -55,10 +55,10 @@ export default function TaskList({ cTaskListData, setAllLists, user }) {
       taskIdWhichNeedToDrop,
       currentListId,
     );
-    const taskUpdate = await axios.put(`/api/list/update?taskId=${id}&listId=${currentListId}`);
+    const taskUpdate = await axios.put(`https://ascendcapassignment.onrender.com/api/list/update?taskId=${id}&listId=${currentListId}`);
 
     if(taskUpdate){
-      const data = await axios.get(`/api/list/All?id=${user?.id}`);
+      const data = await axios.get(`https://ascendcapassignment.onrender.com/api/list/All?id=${user?.id}`);
       setAllLists(data.data.lists)
     }
 
@@ -66,8 +66,8 @@ export default function TaskList({ cTaskListData, setAllLists, user }) {
 
   const handleChackBox = async (event, id) => {
     if(event.target.checked){
-      await axios.delete(`/api/list/delete/task/${id}`);
-      const data = await axios.get(`/api/list/All?id=${user?.id}`);
+      await axios.delete(`https://ascendcapassignment.onrender.com/api/list/delete/task/${id}`);
+      const data = await axios.get(`https://ascendcapassignment.onrender.com/api/list/All?id=${user?.id}`);
       setAllLists(data.data.lists)
     }
     event.target.value = false
