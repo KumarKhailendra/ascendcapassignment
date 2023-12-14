@@ -9,7 +9,7 @@ const app = express();
 dotenv.config();
 
 const corsOptions = {
-  origin: "",
+  origin: "https://ascendcapassignment.vercel.app",
   methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
   Credentials: true,
   optionSuccessStatus:200
