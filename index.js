@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const users = require("./routes/userRoutes");
 const lists = require("./routes/listRoutes");
 require("./Database/db");
